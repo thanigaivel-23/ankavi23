@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect} from 'react'
 import toast from 'react-hot-toast'
 import boximg1 from '../img/boximg1.jpg'
 import boximg2 from '../img/boximg2.jpg'
@@ -12,7 +12,6 @@ import NavBar from './layouts/NavBar'
 import { Link } from 'react-router-dom'
 import Footer from './layouts/Footer'
 import MetaData from './layouts/MetaData'
-import InfiniteScroll from 'react-infinite-scroll-component'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProducts } from '../actions/productAction'
 import { clearError } from '../slices/productSlice'
@@ -27,10 +26,6 @@ const Home = () => {
 
 
 
-    const [items, setItems] = useState([]);
-    const [hasMore, setHasMore] = useState(true);
-    const [page, setPage] = useState(1);
-
 
     useEffect(() => {
         if (error) {
@@ -40,10 +35,10 @@ const Home = () => {
             dispatch(clearError)
         }
 
-        dispatch(getProducts(null, null, page))
+        dispatch(getProducts(null, null))
 
 
-    }, [dispatch, page, error]);
+    }, [dispatch,  error]);
 
     useEffect(() => {
         window.scrollTo({ top: 0 });
@@ -52,15 +47,7 @@ const Home = () => {
 
 
 
-    const fetchData = async () => {
-        setItems(prevItems => [...prevItems, ...products]);
-
-        setPage(prevPage => prevPage + 1);
-
-        if (products.length === 0) {
-            setHasMore(false);
-        }
-    };
+    
 
     return (
         <>
@@ -110,11 +97,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <InfiniteScroll
-                dataLength={items.length}
-                next={fetchData}
-                hasMore={hasMore}
-            />
+           
 
             {/* 4th section - NEW ARRIVALS */}
 
@@ -122,7 +105,7 @@ const Home = () => {
                 <h2 className='tw-font-bold tw-text-center tw-mx-10 tw-mt-16'>NEW ARRIVALS</h2>
 
                 <main className='tw-grid tw-grid-cols-2 sm:tw-grid-cols-2 lg:tw-grid-cols-4 lg:tw-gap-5 tw-mt-10 lg:tw-mx-20'>
-                    {items && items.map((product, index) => (
+                    {products && products.map((product, index) => (
                         <Link to={`/product/${product._id}`} key={index} className='tw-no-underline hover:tw-bg-white hover:tw-shadow-2xl tw-duration-200 tw-px-2 tw-pt-2 md:tw-px-5 md:tw-pt-5 tw-rounded-md tw-rounded-tl-3xl tw-rounded-br-3xl'>
                             <img src={product.images[0].image} alt="" className=' tw-rounded-md tw-rounded-tl-3xl tw-rounded-br-3xl  tw-object-' />
                             <p className='tw-truncate tw-mt-4 tw-px-2 tw-text-[#808080]'>{product.name}</p>

@@ -1,18 +1,18 @@
 import axios from 'axios'
 import { adminProductsFail, adminProductsRequest, adminProductsSuccess, createProductFail, createProductRequest, createProductSuccess, deleteProductFail, deleteProductRequest, deleteProductSuccess, productsFail, productsRequest, productsSuccess, singleProductFail, singleProductRequest, singleProductSuccess, updateProductFail, updateProductRequest, updateProductSuccess } from '../slices/productSlice'
 
-export const getProducts = (keyword, category, page) => async (dispatch) => {
+export const getProducts = (keyword, category ) => async (dispatch) => {
     try {
         dispatch(productsRequest())
 
-        let link = `/api/products?page=${page}`
+        let link = `/api/products`
 
         if (keyword) {
-            link = link + `&keyword=${keyword}`
+            link = link + `?keyword=${keyword}`
         }
 
         if (category) {
-            link = link + `&category=${category}`
+            link = link + `?category=${category}`
         }
 
         const { data } = await axios.get(link)

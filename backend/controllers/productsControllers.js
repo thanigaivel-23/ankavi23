@@ -6,7 +6,7 @@ const APIFeatures = require("../utils/apiFeatures");
 /// GET get products - /api/products
 const getProducts = expressAsyncHandler(async (req, res, next) => {
 
-  const resPerPage = 12;
+  // const resPerPage = 12;
 
 
 
@@ -23,7 +23,8 @@ const getProducts = expressAsyncHandler(async (req, res, next) => {
     productsCount = filteredProductCount
   }
 
-  const products = await buildQuery().paginate(resPerPage).query;
+  const products = await buildQuery().query;
+  // const products = await buildQuery().paginate(resPerPage).query;
 
   let totalSearchProducts = new APIFeatures(productDB.find(), req.query).search()
   totalSearchProducts = await totalSearchProducts.query
