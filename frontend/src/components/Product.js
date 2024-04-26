@@ -42,7 +42,8 @@ const Product = () => {
                     slidesToScroll: 1,
                     arrows: false
                 }
-            }
+            },
+
         ]
     };
 
@@ -149,7 +150,9 @@ const Product = () => {
 
                                 {/* moblie */}
                                 <div className='tw-block md:tw-hidden'>
+
                                     <Slider {...settings} className=''>
+
                                         {singleProduct.images ? singleProduct.images.length > 1 && singleProduct.images.map(image =>
                                             <div className="lg:mr-40" key={image._id}>
                                                 <Image className=" xs:w-4/5 sm:w-3/5 tw-cursor-pointer md:mx-auto"
@@ -157,6 +160,15 @@ const Product = () => {
                                                 />
                                             </div>) : ''}
                                     </Slider>
+
+                                    {singleProduct.images && singleProduct.images.length === 1 &&
+
+                                        < div className="lg:mr-40" >
+                                            <Image className=" xs:w-4/5 sm:w-3/5 tw-cursor-pointer md:mx-auto"
+                                                src={singleProduct.images && singleProduct.images[0].image}
+                                            />
+                                        </div>
+                                    }
                                 </div>
 
                             </div>
@@ -205,7 +217,7 @@ const Product = () => {
 
                                             <tr>
                                                 <td className='tw-border-2 tw-p-2 '>Note</td>
-                                                <td className='tw-border-2 tw-p-2 '>{singleProduct.note}</td>
+                                                <td className='tw-border-2 tw-p-2 '>Product color may slightly vary due to photographic lighting sources or your device settings.</td>
                                             </tr>
 
                                             <tr>
@@ -215,7 +227,7 @@ const Product = () => {
 
                                             <tr>
                                                 <td className='tw-border-2 tw-p-2 '>Wash Care</td>
-                                                <td className='tw-border-2 tw-p-2 '>{singleProduct.washcare}</td>
+                                                <td className='tw-border-2 tw-p-2 '>Dry wash recommended</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -244,7 +256,7 @@ const Product = () => {
                                 </main>
                             </section>}
 
-                    </Fragment>
+                    </Fragment >
             }
 
             <Footer />

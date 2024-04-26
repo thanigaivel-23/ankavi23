@@ -19,10 +19,10 @@ const UpdateProduct = () => {
     const [description, setDescription] = useState('')
     const [fabric, setFabric] = useState('')
     const [zari, setZari] = useState('')
-    const [washcare, setWashcare] = useState('')
+    // const [washcare, setWashcare] = useState('')
     const [weight, setWeight] = useState('')
     const [stock, setStock] = useState('')
-    const [note, setNote] = useState('')
+    // const [note, setNote] = useState('')
     const [category, setCategory] = useState('')
     const [video_link, setVideo_link] = useState('')
     const [images, setImages] = useState([])
@@ -61,9 +61,9 @@ const UpdateProduct = () => {
         formData.append('description', description)
         formData.append('stock', stock)
         formData.append('zari', zari)
-        formData.append('note', note)
+        // formData.append('note', note)
         formData.append('category', category)
-        formData.append('washcare', washcare)
+        // formData.append('washcare', washcare)
         formData.append('weight', weight)
         formData.append('video_link', video_link)
         formData.append('fabric', fabric)
@@ -111,10 +111,10 @@ const UpdateProduct = () => {
             setStock(singleProduct.stock)
             setCategory(singleProduct.category)
             setFabric(singleProduct.fabric)
-            setNote(singleProduct.note)
+            // setNote(singleProduct.note)
             setZari(singleProduct.zari)
             setWeight(singleProduct.weight)
-            setWashcare(singleProduct.washcare)
+            // setWashcare(singleProduct.washcare)
             setVideo_link(singleProduct.video_link)
 
             let images = []
@@ -179,10 +179,10 @@ const UpdateProduct = () => {
 
                 <input onChange={(e) => setWeight(e.target.value)} value={weight} type="text" placeholder='Weight' className='tw-outline-none tw-border tw-rounded-sm tw-box-border tw-w-11/12 tw-mx-3 tw-mb-3 tw-px-3 tw-py-2 focus:tw-border-gray-700 placeholder:tw-text-sm' />
 
-                <input onChange={(e) => setWashcare(e.target.value)} value={washcare} type="text" placeholder='Wash Care' className='tw-outline-none tw-border tw-rounded-sm tw-box-border tw-w-11/12 tw-mx-3 tw-mb-3 tw-px-3 tw-py-2 focus:tw-border-gray-700 placeholder:tw-text-sm' />
+                {/* <input onChange={(e) => setWashcare(e.target.value)} value={washcare} type="text" placeholder='Wash Care' className='tw-outline-none tw-border tw-rounded-sm tw-box-border tw-w-11/12 tw-mx-3 tw-mb-3 tw-px-3 tw-py-2 focus:tw-border-gray-700 placeholder:tw-text-sm' /> */}
 
 
-                <input onChange={(e) => setNote(e.target.value)} value={note} type="text" placeholder='Note' className='tw-outline-none tw-border tw-rounded-sm tw-box-border tw-w-11/12 tw-mx-3 tw-mb-3 tw-px-3 tw-py-2 focus:tw-border-gray-700 placeholder:tw-text-sm' />
+                {/* <input onChange={(e) => setNote(e.target.value)} value={note} type="text" placeholder='Note' className='tw-outline-none tw-border tw-rounded-sm tw-box-border tw-w-11/12 tw-mx-3 tw-mb-3 tw-px-3 tw-py-2 focus:tw-border-gray-700 placeholder:tw-text-sm' /> */}
 
                 {/* images */}
                 <p className='tw-mx-3 tw-py-3 tw-text-sm md:tw-text-base tw-font-bold tw-text-gray-700 '>Images</p>

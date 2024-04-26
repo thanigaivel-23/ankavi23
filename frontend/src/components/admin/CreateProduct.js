@@ -14,11 +14,11 @@ const CreateProduct = () => {
     const [price, setPrice] = useState('')
     const [description, setDescription] = useState('')
     const [fabric, setFabric] = useState('')
-    const [washcare, setWashcare] = useState('')
+    // const [washcare, setWashcare] = useState('')
     const [weight, setWeight] = useState('')
     const [zari, setZari] = useState('')
     const [stock, setStock] = useState('')
-    const [note, setNote] = useState('')
+    // const [note, setNote] = useState('')
     const [category, setCategory] = useState('')
     const [video_link, setVideo_link] = useState('')
     const [images, setImages] = useState([])
@@ -55,9 +55,9 @@ const CreateProduct = () => {
         formData.append('description', description)
         formData.append('stock', stock)
         formData.append('zari', zari)
-        formData.append('note', note)
+        // formData.append('note', note)
         formData.append('category', category)
-        formData.append('washcare', washcare)
+        // formData.append('washcare', washcare)
         formData.append('weight', weight)
         formData.append('video_link', video_link)
         formData.append('fabric', fabric)
@@ -133,9 +133,9 @@ const CreateProduct = () => {
 
                 <input onChange={(e) => setWeight(e.target.value)} value={weight} type="text" placeholder='Weight' className='tw-outline-none tw-border tw-rounded-sm tw-box-border tw-w-11/12 tw-mx-3 tw-mb-3 tw-px-3 tw-py-2 focus:tw-border-gray-700 placeholder:tw-text-sm' />
 
-                <input onChange={(e) => setWashcare(e.target.value)} value={washcare} type="text" placeholder='Wash Care' className='tw-outline-none tw-border tw-rounded-sm tw-box-border tw-w-11/12 tw-mx-3 tw-mb-3 tw-px-3 tw-py-2 focus:tw-border-gray-700 placeholder:tw-text-sm' />
+                {/* <input onChange={(e) => setWashcare(e.target.value)} value={washcare} type="text" placeholder='Wash Care' className='tw-outline-none tw-border tw-rounded-sm tw-box-border tw-w-11/12 tw-mx-3 tw-mb-3 tw-px-3 tw-py-2 focus:tw-border-gray-700 placeholder:tw-text-sm' /> */}
 
-                <input onChange={(e) => setNote(e.target.value)} value={note} type="text" placeholder='Note' className='tw-outline-none tw-border tw-rounded-sm tw-box-border tw-w-11/12 tw-mx-3 tw-mb-3 tw-px-3 tw-py-2 focus:tw-border-gray-700 placeholder:tw-text-sm' />
+                {/* <input onChange={(e) => setNote(e.target.value)} value={note} type="text" placeholder='Note' className='tw-outline-none tw-border tw-rounded-sm tw-box-border tw-w-11/12 tw-mx-3 tw-mb-3 tw-px-3 tw-py-2 focus:tw-border-gray-700 placeholder:tw-text-sm' /> */}
 
 
                 {/* images */}

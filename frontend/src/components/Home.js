@@ -93,7 +93,7 @@ const Home = () => {
 
             {/* 2nd section - about*/}
             <section className='tw-text-center tw-mt-16 md:tw-mt-24'>
-                <h2> 23 INDIA'S FINEST KANCHIPURAM SILK SAREES & MORE</h2>
+                <h2>INDIA'S FINEST KANCHIPURAM SILK SAREES & MORE</h2>
                 <p className=' tw-py-8 tw-w-[70%] tw-mx-auto'>Ankavi Silks is a Kanchipuram saree brand on a mission to bridge the gap between tradition and tomorrow. Led by the next generation of weavers, we offer authentic Kanchipuram sarees crafted with meticulous attention to detail, upholding the legacy of this esteemed art form. Every Ankavi saree embodies the rich heritage of Kanchipuram silk weaving, while ensuring fair treatment and a sustainable future for the weavers who bring these heirlooms to life.</p>
             </section>
 

@@ -26,18 +26,18 @@ const productSchema = new mongoose.Schema({
     type: String,
     required: [true, "please enter product zari"],
   },
-  note: {
-    type: String,
-    required: [true, "please enter product note"],
-  },
+  // note: {
+  //   type: String,
+  //   required: [true, "please enter product note"],
+  // },
   fabric: {
     type: String,
     required: [true, "please enter product material"],
   },
-  washcare: {
-    type: String,
-    required: [true, "please enter product wash care"],
-  },
+  // washcare: {
+  //   type: String,
+  //   required: [true, "please enter product wash care"],
+  // },
   weight: {
     type: String,
     required: [true, "please enter product weight"],
