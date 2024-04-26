@@ -124,7 +124,7 @@ const CreateProduct = () => {
                 </select>
 
                 <input onChange={(e) => setVideo_link(e.target.value)} value={video_link} type="text" placeholder='Video Link' className='tw-outline-none tw-border tw-rounded-sm tw-box-border tw-w-11/12 tw-mx-3 tw-mb-3 tw-px-3 tw-py-2 focus:tw-border-gray-700 placeholder:tw-text-sm' />
-               
+
                 <input onChange={(e) => setStock(e.target.value)} value={stock} type="number" placeholder='Stock' className='tw-outline-none tw-border tw-rounded-sm tw-box-border tw-w-11/12 tw-mx-3 tw-mb-3 tw-px-3 tw-py-2 focus:tw-border-gray-700 placeholder:tw-text-sm' />
 
                 <input onChange={(e) => setZari(e.target.value)} value={zari} type="text" placeholder='Zari' className='tw-outline-none tw-border tw-rounded-sm tw-box-border tw-w-11/12 tw-mx-3 tw-mb-3 tw-px-3 tw-py-2 focus:tw-border-gray-700 placeholder:tw-text-sm' />
