@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react'
+import React, { useEffect } from 'react'
 import toast from 'react-hot-toast'
 import boximg1 from '../img/boximg1.jpg'
 import boximg2 from '../img/boximg2.jpg'
@@ -25,7 +25,7 @@ const Home = () => {
     const dispatch = useDispatch()
 
 
-
+    let reversedArray = [...products].reverse().slice(0, 8);
 
     useEffect(() => {
         if (error) {
@@ -38,7 +38,7 @@ const Home = () => {
         dispatch(getProducts(null, null))
 
 
-    }, [dispatch,  error]);
+    }, [dispatch, error]);
 
     useEffect(() => {
         window.scrollTo({ top: 0 });
@@ -47,7 +47,7 @@ const Home = () => {
 
 
 
-    
+
 
     return (
         <>
@@ -97,19 +97,19 @@ const Home = () => {
                 </div>
             </section>
 
-           
+
 
             {/* 4th section - NEW ARRIVALS */}
 
             <section className='tw-mt-16 md:tw-mt-24'>
                 <h2 className='tw-font-bold tw-text-center tw-mx-10 tw-mt-16'>NEW ARRIVALS</h2>
 
-                <main className='tw-grid tw-grid-cols-2 sm:tw-grid-cols-2 lg:tw-grid-cols-4 lg:tw-gap-5 tw-mt-10 lg:tw-mx-20'>
-                    {products && products.map((product, index) => (
+                <main className='tw-grid tw-grid-cols-2 sm:tw-grid-cols-2 lg:tw-grid-cols-4 lg:tw-gap- tw-mt-10 lg:tw-mx-20'>
+                    {reversedArray && reversedArray.map((product, index) => (
                         <Link to={`/product/${product._id}`} key={index} className='tw-no-underline hover:tw-bg-white hover:tw-shadow-2xl tw-duration-200 tw-px-2 tw-pt-2 md:tw-px-5 md:tw-pt-5 tw-rounded-md tw-rounded-tl-3xl tw-rounded-br-3xl'>
-                            <img src={product.images[0].image} alt="" className=' tw-rounded-md tw-rounded-tl-3xl tw-rounded-br-3xl  tw-object-' />
+                            <img src={product.images[0].image} alt="" className=' tw-aspect-[9/14]  tw-rounded-md tw-rounded-tl-3xl tw-rounded-br-3xl tw-w-full ' />
                             <p className='tw-truncate tw-mt-4 tw-px-2 tw-text-[#808080]'>{product.name}</p>
-                            <p className='tw-pl-3 tw-font-bold tw-text-black tw-text-lg'>₹ {product.price}</p>
+                            <p className='tw-pl-3 tw-pb-1 tw-font-bold tw-text-black tw-text-lg'>₹ {product.price}</p>
                         </Link>
                     ))}
                 </main>
